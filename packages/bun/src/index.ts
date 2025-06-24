@@ -106,6 +106,7 @@ export {
   setupExpressErrorHandler,
   fastifyIntegration,
   setupFastifyErrorHandler,
+  firebaseIntegration,
   koaIntegration,
   setupKoaErrorHandler,
   connectIntegration,
