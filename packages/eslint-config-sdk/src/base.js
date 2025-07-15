@@ -107,6 +107,9 @@ module.exports = {
         // Be explicit about class member accessibility (public, private, protected). Turned off
         // on tests for ease of use.
         '@typescript-eslint/explicit-member-accessibility': ['error'],
+
+        // Disallow (instead of warn) for usage of any.
+        '@typescript-eslint/no-explicit-any': 'error',
       },
     },
     {

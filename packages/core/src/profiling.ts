@@ -1,11 +1,12 @@
+import type { Client } from './client';
 import { getClient } from './currentScopes';
 import { DEBUG_BUILD } from './debug-build';
 import type { Profiler, ProfilingIntegration } from './types-hoist/profiling';
 import { debug } from './utils/logger';
 
 function isProfilingIntegrationWithProfiler(
-  integration: ProfilingIntegration<any> | undefined,
-): integration is ProfilingIntegration<any> {
+  integration: ProfilingIntegration<Client> | undefined,
+): integration is ProfilingIntegration<Client> {
   return (
     !!integration &&
     typeof integration['_profiler'] !== 'undefined' &&
@@ -25,7 +26,7 @@ function startProfiler(): void {
     return;
   }
 
-  const integration = client.getIntegrationByName<ProfilingIntegration<any>>('ProfilingIntegration');
+  const integration = client.getIntegrationByName<ProfilingIntegration<Client>>('ProfilingIntegration');
 
   if (!integration) {
     DEBUG_BUILD && debug.warn('ProfilingIntegration is not available');
@@ -51,7 +52,7 @@ function stopProfiler(): void {
     return;
   }
 
-  const integration = client.getIntegrationByName<ProfilingIntegration<any>>('ProfilingIntegration');
+  const integration = client.getIntegrationByName<ProfilingIntegration<Client>>('ProfilingIntegration');
   if (!integration) {
     DEBUG_BUILD && debug.warn('ProfilingIntegration is not available');
     return;
