@@ -4,6 +4,10 @@
 
 - "You miss 100 percent of the chances you don't take. — Wayne Gretzky" — Michael Scott
 
+## 9.40.0
+
+- feat(cloudflare): Ensure errors get captured from durable objects ([#16838](https://github.com/getsentry/sentry-javascript/pull/16838))
+
 Work in this release was contributed by @0xbad0c0d3. Thank you for your contribution!
 
 ## 9.39.0
